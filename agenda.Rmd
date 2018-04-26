@@ -85,7 +85,7 @@ The focus is on the programming language R. However, the principles and skills l
     - How R's ecosystem works: packages, tutorials, help forums and code sharing sites ([ERP 4.4](https://csgillespie.github.io/efficientR/workflow.html#package-selection) and [ERP 10](https://csgillespie.github.io/efficientR/learning.html))
 
 -  Spatial data with R (10:15 - 11:15) 
-    - 15 minutes intro, 60 minutes hands-on with [Chapter 2](http://geocompr.robinlovelace.net/spatial-class.html) from **Geocomputation with R** [@lovelace_geocomputation_2018].
+    - 15 minutes intro, hands-on with [Chapter 2](http://geocompr.robinlovelace.net/spatial-class.html) from **Geocomputation with R** [@lovelace_geocomputation_2018].
     - An introduction to classes
     - The vector geographic data model with **sf**
         - Practical + [exercises](http://geocompr.robinlovelace.net/spatial-class.html#ex2) 1:3 in Chapter 2
@@ -98,7 +98,7 @@ The focus is on the programming language R. However, the principles and skills l
   - Data sources
   - Data formats for spatial data ([Geocompr Chapter 6](https://geocompr.robinlovelace.net/read-write.html))
       - [Exercises](http://geocompr.robinlovelace.net/read-write.html#exercises-4) 1:4 in Chapter 4. 
-  - See also data formats for non-spatial data ([ERP 5](https://csgillespie.github.io/efficientR/input-output.html)
+  - See also data formats for non-spatial data ([ERP 5](https://csgillespie.github.io/efficientR/input-output.html))
   
 <!-- - The '[sf1](https://cran.r-project.org/web/packages/sf/vignettes/sf1.html#reading-and-writing)' vignette -->
   <!-- - Practical: download and load data -->

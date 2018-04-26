@@ -1,0 +1,257 @@
+---
+title: "Spatial data classes"
+author: "Robin Lovelace, University of Leeds, \n `r Sys.Date()`"
+date: "Slides: [github.com/ITSLeeds/R4TA](https://github.com/ITSLeeds/R4TA)"
+output:
+  ioslides_presentation:
+    widescreen: true
+    transition: slower
+    logo: ../figures/its-logo-square.png
+bibliography: ../references.bib
+---
+
+## An introduction to classes
+
+- All objects in R have a class
+- Classes can be combined
+- Spatial class systems
+
+## Common R classes
+
+> - Vectors
+> - Matrices
+> - Lists
+> - Data frames
+
+```{r}
+x = 1
+class(x)
+typeof(x)
+dim(x)
+```
+
+## Vectors
+
+```{r, echo=FALSE}
+knitr::include_graphics("http://r4ds.had.co.nz/diagrams/data-structures-overview.png")
+```
+
+## Practical 1: Getting used to RStudio and R
+
+> - Open RStudio and have a look around
+> - Create a new project
+> - Create a new R Script: pass code to the console with `Ctl-Enter`
+> - Use R as a calculator: what is:
+
+$$
+\pi * 9.15^2
+$$
+
+> - Explore each of the 'panes'
+> - Find and write down some useful shortcuts (`Alt-Shift-K` on Windows/Linux)
+
+# Basic R functions and behaviour
+
+## Functions and objects
+
+**In R:**
+
+- Everything that exists is an object
+- Everything that happens is a function
+
+```{r}
+x = 5
+```
+
+## Functions
+
+```{r}
+sin(x)
+exp(x)
+sinx = sin(x)
+```
+
+## Creating new functions
+
+```{r}
+plus1 = function(x) {
+  x + 1
+}
+plus1(x)
+```
+
+
+## R is vector based
+
+```{r}
+x = c(1, 2, 5)
+x
+x^2
+x + 2
+```
+
+```{r, eval=FALSE}
+x + rev(x)
+```
+
+## The classic programming way: verbose
+
+```{r}
+x = c(1, 2, 5)
+for(i in x){
+  print(i^2)
+}
+```
+
+Creating a new vector based on `x`
+
+```{r}
+for(i in 1:length(x)){
+  if(i == 1) x2 = x[i]^2
+  else x2 = c(x2, x[i]^2)
+}
+x2
+```
+
+## Data types
+
+R has a hierarchy of data classes, tending to the lowest:
+
+- Binary
+- Integer (numeric)
+- Double (numeric)
+- Character
+
+## Examples of data types
+
+```{r}
+a = TRUE
+b = 1:5
+c = pi
+d = "Hello Leeds"
+```
+
+```{r, eval=FALSE}
+class(a)
+class(b)
+class(c)
+class(d)
+```
+
+## Data type switching
+
+```{r}
+ab = c(a, b)
+ab
+class(ab)
+```
+
+## Test on data types
+
+```{r}
+class(c(a, b))
+class(c(a, c))
+class(c(b, d))
+```
+
+## Sequences
+
+```{r}
+x = 1:5
+y = 2:6
+plot(x, y)
+```
+
+## Sequences with seq
+
+```{r}
+x = seq(1,2, by = 0.2)
+length(x)
+x = seq(1, 2, length.out = 5)
+length(x)
+```
+
+
+```{r, echo=FALSE}
+x = 1:5
+# class(x)
+x = c(1:4, 4.9999999)
+# class(x)
+```
+
+- Challenge: create a list containing logical, character and numeric vectors
+    - What happens to the class if you *unlist* this list?
+
+```{r, echo=FALSE, eval=FALSE}
+l = list(TRUE, "yes", 5.5)
+# unlist(l)
+```
+
+## Challenges
+
+- Complete all the code examples in 20.4
+    - Challenge: what are the outcomes of the following commands?:
+    
+```{r, eval=FALSE}
+x = 1:10
+x[c(1, NA)]
+x[2 * 3]
+x[-2 * 3]
+```
+
+# Spatial data classes
+
+## sf objects
+
+`sf` is a package and class system for geographic data
+
+```{r}
+library(sf)
+```
+
+Enables geographic data creation, e.g. with:
+
+```{r}
+x = 1:9
+y = x^2
+xdf = data.frame(v1 = x, x = x, y = y)
+xsf = st_as_sf(x = xdf, coords = c("x", "y"))
+```
+
+## Types of sf object
+
+```{r, echo=FALSE, out.width="50%"}
+knitr::include_graphics("http://geocompr.robinlovelace.net/figures/sf-classes.png")
+```
+
+
+## What's in an sf object?
+
+```{r}
+class(xsf)
+names(xsf)
+xsf$geometry[1]
+unclass(xsf$geometry[1][[1]])
+attributes(xsf$geometry[1][[1]])
+```
+
+## Creating sf objects manually
+
+> - Not recommended!
+
+```{r}
+(xy = st_point(c(5, 2))) # XY point
+(xyg = st_sfc(xy))
+(xysf = st_sf(xyg))
+```
+
+
+## Exercises
+
+- Talk about the pros and cons of vector data in your field of application with your neighbour: when would you be persuaded to use raster data?
+
+- Work through section [2.1](http://geocompr.robinlovelace.net/spatial-class.html#vector-data) of Chapter 2, focussing on the code (not the text)
+
+- Complete the [exercises](http://geocompr.robinlovelace.net/spatial-class.html#ex2) 1:3 in Chapter 2
+
+- Bonus: work through section [20.4](http://r4ds.had.co.nz/vectors.html#using-atomic-vectors) in r4ds and complete the exercises in section [20.4.6](http://r4ds.had.co.nz/vectors.html#exercises-52)
