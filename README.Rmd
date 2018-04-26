@@ -1,10 +1,20 @@
 ---
 output: github_document
+bibliography: references.bib
 ---
 
 Welcome to R for Transport Applications. 
 
-Comments and links from the course.
+Comments, slide and links from the course can be found here.
+
+## Links
+
+- [Gecomputation with R](http://geocompr.robinlovelace.net/) [@lovelace_geocomputation_2018]
+- [R for Data Science](http://r4ds.had.co.nz/) [@grolemund_r_2016-1]
+- [Efficient R Programming](https://csgillespie.github.io/efficientR/) [@gillespie_efficient_2016]
+- [sf](https://cran.r-project.org/web/packages/sf/vignettes/) package vignettes (see also `vignette(package = "sf")`)
+- [dodgr website](https://atfutures.github.io/dodgr/) (contains vignettes)
+- [tutorial by Mark Padgham](https://github.com/mpadge/r4trans-april18/blob/master/bristol.Rmd)
 
 ## Notes from day 1
 
@@ -33,4 +43,4 @@ asia_df = st_sf(
 class(asia_df)
 ```
 
-
+## References

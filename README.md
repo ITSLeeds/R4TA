@@ -1,7 +1,17 @@
 
 Welcome to R for Transport Applications.
 
-Comments and links from the course.
+Comments, slide and links from the course can be found here.
+
+Links
+-----
+
+-   [Gecomputation with R](http://geocompr.robinlovelace.net/) (Lovelace, Nowosad, and Muenchow 2018)
+-   [R for Data Science](http://r4ds.had.co.nz/) (Grolemund and Wickham 2016)
+-   [Efficient R Programming](https://csgillespie.github.io/efficientR/) (Gillespie and Lovelace 2016)
+-   [sf](https://cran.r-project.org/web/packages/sf/vignettes/) package vignettes (see also `vignette(package = "sf")`)
+-   [dodgr website](https://atfutures.github.io/dodgr/) (contains vignettes)
+-   [tutorial by Mark Padgham](https://github.com/mpadge/r4trans-april18/blob/master/bristol.Rmd)
 
 Notes from day 1
 ----------------
@@ -52,3 +62,12 @@ class(asia_df)
 ```
 
     ## [1] "sf"         "data.frame"
+
+References
+----------
+
+Gillespie, Colin, and Robin Lovelace. 2016. *Efficient R Programming: A Practical Guide to Smarter Programming*. O’Reilly Media. <https://csgillespie.github.io/efficientR/>.
+
+Grolemund, Garrett, and Hadley Wickham. 2016. *R for Data Science*. 1 edition. O’Reilly Media.
+
+Lovelace, Robin, Jakub Nowosad, and Jannes Muenchow. 2018. *Geocomputation with R*.
