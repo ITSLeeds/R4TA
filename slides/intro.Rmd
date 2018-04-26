@@ -223,8 +223,8 @@ x = 5 # the same as x <- 5
 - Warning when using `=`
 
 ```{r, eval=FALSE}
-system.time(x_big = (1:1e7)^2)
 system.time({x_big = (1:1e7)^2})
+system.time({x_big = 1:1e7})
 ```
 
 - Warning when using `<-`
@@ -232,6 +232,11 @@ system.time({x_big = (1:1e7)^2})
 ```{r, eval=FALSE}
 x < -5
 x <-5
+library(tidyverse)
+5 %>% 
+  sin(.) %>% 
+  cos(.) -> res
+res = cos(sin(5))
 ```
 
 ## The R ecosystem

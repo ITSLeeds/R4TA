@@ -1,0 +1,36 @@
+---
+output: github_document
+---
+
+Welcome to R for Transport Applications. 
+
+Comments and links from the course.
+
+## Notes from day 1
+
+```{r}
+# demonstration of key.pos
+library(sf)
+library(spData)
+plot(world["pop"])
+plot(world["pop"], key.pos = 3)
+# for more info see:
+# https://cran.r-project.org/web/packages/sf/vignettes/sf5.html
+# vignette("sf")
+?sf::plot
+```
+
+Demonstration of sfc to sf conversion:
+
+```{r}
+asia = world[world$continent == "Asia", ]
+asia = st_union(asia)
+class(asia)
+asia_df = st_sf(
+  data.frame(name = "asia"),
+  geometry = asia
+  )
+class(asia_df)
+```
+
+

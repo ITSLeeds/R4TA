@@ -136,6 +136,14 @@ class(a)
 class(b)
 class(c)
 class(d)
+a = c(1:5, "a")
+a[1] + a[2]
+l = list(a = 2, b = "c")
+l[1]
+l[[1]]
+l.a
+l$a
+c(a = 2, b = "c")
 ```
 
 ## Data type switching
@@ -216,6 +224,13 @@ x = 1:9
 y = x^2
 xdf = data.frame(v1 = x, x = x, y = y)
 xsf = st_as_sf(x = xdf, coords = c("x", "y"))
+world
+library(spData)
+plot(world)
+class(world)
+dim(world)
+w = spData::world
+names(w)
 ```
 
 ## Types of sf object
