@@ -148,7 +148,8 @@ The focus is on the programming language R. However, the principles and skills l
 
 **LUNCH: 12:30 - 13:30**
 
-- Visualising transport data with R (13:30 - 14:30)
+- ~~Visualising transport data with R (13:30 - 14:30)~~
+- Working through / debugging the dodgr tutorial / continuing with Chapter 7
     - 15 minute lecture
     - Making maps with R (45 minute practical based on Geocompr Chapter [9](http://geocompr.robinlovelace.net/adv-map.html))
 

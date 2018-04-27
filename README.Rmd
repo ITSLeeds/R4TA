@@ -47,8 +47,8 @@ Reading-in data - see Chapter 6 of Geocomputation with R.
 
 ```{r}
 # from a file:
-u = "https://github.com/martinjc/UK-GeoJSON/blob/master/json/eurostat/sco/topo_nuts2.json"
-download.file(u, "scot.geojson") # download
+# u = "https://github.com/martinjc/UK-GeoJSON/blob/master/json/eurostat/sco/topo_nuts2.json"
+# download.file(u, "scot.geojson") # download
 ```
 
 ```{r, eval=FALSE}
@@ -80,7 +80,6 @@ head(flow[1:3])
 l = od2line(flow = flow, zones = cents_sf)
 class(l)
 plot(l)
-
 # visualise the result:
 m = mapview::mapview(l)
 names(m@map)
@@ -93,6 +92,26 @@ l_length = st_length(l)
 class(l_length)
 l_length = as.numeric(l_length)
 l$length = l_length
+plot(l)
+plot(l$geometry)
+```
+
+## Route nets
+
+```{r, eval=FALSE}
+l = od2line(flow[2:9,], cents_sf)
+r = line2route(l)
+plot(r)
+
+devtools::install_github("robinlovelace/cyclestreets")
+from = stplanr::geo_code("leeds")
+to = stplanr::geo_code("Bradford")
+r = cyclestreets::journey(from, to)
+?spDataLarge::bristol_zones
+?cyclestreets::json2sf_cs
+plot(r)
+r_osrm = stplanr::route_osrm("Leeds", "Bradford uk")
+plot(r_osrm)
 ```
 
 
