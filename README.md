@@ -91,6 +91,21 @@ In order to help improve the course in the future, please provide feedback via t
 
 <https://leeds.onlinesurveys.ac.uk/r-for-transport-applications-27th-27th-apr-2018>
 
+``` r
+library(stplanr)
+data(package = "stplanr")
+class(cents_sf)
+plot(cents_sf)
+head(flow[1:3])
+l = od2line(flow = flow, zones = cents_sf)
+class(l)
+plot(l)
+m = mapview::mapview(l)
+names(m@map)
+class(m@map)
+htmlwidgets::saveWidget(m@map, "map.html")
+```
+
 References
 ----------
 
