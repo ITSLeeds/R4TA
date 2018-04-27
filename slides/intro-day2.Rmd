@@ -120,4 +120,33 @@ res = cos(sin(5))
 - Decide on a concrete objective --- something you'd like to acheive by the end of the day
 - Break that task down into chunk and write them on a blank piece of paper
 
+## Introduction to stplanr
+
+- What it does - input data
+
+```{r}
+library(stplanr)
+head(flow[1:3])
+plot(cents_sf)
+```
+
+## From od to spatial data
+
+```{r}
+l = od2line(flow, cents_sf)
+plot(l["All"], lwd = l$All / mean(l$All))
+```
+
+## Exercises (options)
+
+- Work-though Chapter 7.3 
+- Find and workthough the `stplanr-paper` vignette (especially if interested in OD data)
+- Try to create a function `journey_via()` that routes via a ... (e.g. pub on way to station - advanced)
+
+## Heads-up: what's coming
+
+```{r, echo=FALSE}
+knitr::include_graphics("../figures/local-routing.png")
+```
+
 ## References

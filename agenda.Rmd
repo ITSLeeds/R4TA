@@ -130,16 +130,21 @@ The focus is on the programming language R. However, the principles and skills l
 
 - Recap on R as a GIS: a worked example (9:30 - 10:00) 
     - Live demo of the Propensity to Cycle Tool
-    - Practical walk-through illustrating a transport planning workflow in R
+    - ~~Practical walk-through illustrating a transport planning workflow in R~~
+    - A bit on Git
+    - Illustration of R workflow with new package: [cyclestreets](https://github.com/Robinlovelace/cyclestreets)
 
 - An [introduction to stplanr](https://cran.r-project.org/web/packages/stplanr/vignettes/introducing-stplanr.html) (10:00 - 11:00) 
-    - Practical: Section [7.3](https://geocompr.robinlovelace.net/transport.html#transport-zones) of Geocompr
+    - Practical (default): Section [7.3](https://geocompr.robinlovelace.net/transport.html#transport-zones) of Geocompr
+    - Practical (bonus / advanced): add new function `journey_via()`
 
 **11:00 - 11:10 Coffee break**
 
 - From orign-destination data to route networks (11:10 - 12:30)
     - Handling OD data (Geocompr, [7.4](https://geocompr.robinlovelace.net/transport.html#desire-lines))
     - Routes and nodes (Geocompr, [7.5](https://geocompr.robinlovelace.net/transport.html#routes) and [7.6](https://geocompr.robinlovelace.net/transport.html#nodes))
+    - Practical: [Exercises](http://geocompr.robinlovelace.net/transport.html#ex-transport) 1 and 2 from Chapter 7
+    - Bonus: Other exercises
 
 **LUNCH: 12:30 - 13:30**
 
