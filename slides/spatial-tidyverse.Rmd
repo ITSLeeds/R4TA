@@ -361,6 +361,40 @@ dev.off()
 ![](http://www.robinlovelace.net/presentations/figs/coord_compare.png)
 
 ---
+
+## tidyverse functions on OSM data
+
+```{r}
+library(spDataLarge)
+summary(bristol_ways)
+bristol_fast = bristol_ways %>% 
+  filter(highway == "road") %>% 
+  filter(maxspeed == "70 mph" | maxspeed == "50 mph") %>% 
+  mutate(length = as.numeric(st_length(.))) %>% 
+  filter(length > 1000)
+```
+
+---
+
+## The result of data cleaning
+
+```{r}
+summary(bristol_fast)
+```
+
+---
+
+## Visual check
+
+```{r}
+library(leaflet)
+leaflet() %>% 
+  addTiles() %>% 
+  addPolylines(data = bristol_fast)
+```
+
+---
+
 ## Basic maps
 
 - Basic maps of `sf` objects can be quickly created using the `plot()` function:

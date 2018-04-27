@@ -63,6 +63,30 @@ class(asia_df)
 
     ## [1] "sf"         "data.frame"
 
+Reading-in data - see Chapter 6 of Geocomputation with R.
+
+``` r
+# from a file:
+u = "https://github.com/martinjc/UK-GeoJSON/blob/master/json/eurostat/sco/topo_nuts2.json"
+download.file(u, "scot.geojson") # download
+```
+
+``` r
+lnd = read_sf("~/repos/Creating-maps-in-R/data/lnd.geojson")
+class(lnd)
+write_sf(lnd, "lnd.geojson")
+saveRDS()
+write_rds(lnd, "lnd.rds")
+file.size("lnd.geojson") / 1e6
+file.size("lnd.rds") / 1e6
+plot(lnd)
+library(osmdata)
+q = opq(bbox = "Leeds") %>% 
+  add_osm_feature("leisure", value = "park")
+res = osmdata_sf(q = q)
+plot(res$osm_lines$geometry)
+```
+
 References
 ----------
 
