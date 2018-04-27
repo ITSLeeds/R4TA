@@ -87,6 +87,10 @@ res = osmdata_sf(q = q)
 plot(res$osm_lines$geometry)
 ```
 
+In order to help improve the course in the future, please provide feedback via this online form:
+
+<https://leeds.onlinesurveys.ac.uk/r-for-transport-applications-27th-27th-apr-2018>
+
 References
 ----------
 
