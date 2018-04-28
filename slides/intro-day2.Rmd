@@ -149,4 +149,40 @@ plot(l["All"], lwd = l$All / mean(l$All))
 knitr::include_graphics("../figures/local-routing.png")
 ```
 
+## Making maps with R
+
+There are **many** mapping packages in R as illustrated in this table:
+
+http://geocompr.robinlovelace.net/adv-map.html#tab:map-gpkg
+
+> - Let's take a look at some of them
+
+## tmap
+
+> - If you learn one mapping package, learn **tmap**
+
+```{r}
+library(tmap)
+library(spDataLarge)
+m = tm_shape(bristol_region) +
+  tm_borders() +
+  tm_shape(bristol_zones) +
+  tm_polygons()
+```
+
+## What does it look like?
+
+```{r}
+m
+```
+
+## tmap makes interactive maps
+
+```{r}
+tmap_mode("view")
+m
+```
+
+
+
 ## References
